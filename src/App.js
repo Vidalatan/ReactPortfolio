@@ -2,14 +2,15 @@ import './App.css';
 import Header from './Pages/GlobalComponents/Header/Header';
 import Footer from './Pages/GlobalComponents/Footer/Footer';
 import Main from './Pages/Main/Main';
+import ThemeProvider from './Pages/ContextProviders/ThemeContext';
 
 function App() {
   return (
-    <>
-    <Header />
-    <Main />
-    <Footer />
-    </>
+    <ThemeProvider>
+      <Header />
+      <Main />
+      <Footer />
+    </ThemeProvider>
   );
 }
 
