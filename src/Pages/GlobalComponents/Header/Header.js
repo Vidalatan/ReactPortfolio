@@ -3,8 +3,7 @@ import { ThemeContext } from '../../ContextProviders/Theme/ThemeContext';
 import classify from '../../../utils/classify';
 
 import classes from './Header.module.css';
-import wf from '../../../wireframeTools.module.css';
-const {wfbr, wfbb, wfbg, wffr, wffb, wffg} = wf // Wireframing tools
+import NavDrop from './components/NavDrop';
 
 export default function Header() {
   const {themeToggleIcon, headerIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
@@ -18,10 +17,14 @@ export default function Header() {
       <nav className={classes.navBar}>
 
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText)}>
-          <li>Projects</li>
-          <li>About Me</li>
-          <li>GET IN TOUCH</li>
+          <li className={classes.navLink}>Projects</li>
+          <li className={classes.navLink}>About Me</li>
+          <li className={classes.navLink}>GET IN TOUCH</li>
         </ul>
+
+        <div className={classes.navLinksMenu}></div>
+
+        <NavDrop />
 
         <div className={classes.navThemeToggle}>
           <img 

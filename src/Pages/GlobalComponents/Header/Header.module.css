@@ -4,6 +4,7 @@ header {
   justify-content: space-between;
 }
 
+
 .headerIcon {
   display: flex;
   flex-flow: column nowrap;
@@ -24,7 +25,7 @@ header {
 .navBar {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 50%;
 }
@@ -37,10 +38,49 @@ header {
   width: 80%;
 }
 
+.navLinksMenu {
+  display: none;
+  width: 45px;
+  height: 45px;
+  background-color: rebeccapurple;
+  /* margin-right: 50px; */
+}
+
+.navLinksDrop {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 500px;
+  top: 0;
+  right: 150px;
+}
+
+.navLink {
+  margin: 0 20px;
+}
+
 .navThemeToggle {
   display: flex;
   flex-flow: column nowrap;
   width: 45px;
   height: 45px;
-  margin-right: 50px;
+  margin: 0 50px 0 25px;
+}
+
+@media (max-width: 820px) {
+  .headerIcon {
+    margin-left: 25px;
+  }
+  
+  .navLinksContainer {
+    display: none;
+  }
+
+  .navLinksMenu {
+    display: flex;
+  }
+
+  .navThemeToggle {
+    margin-right: 25px;
+  }
 }
