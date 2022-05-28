@@ -1,0 +1,45 @@
+.themeText {
+  color: black;
+}
+.themeAltText {
+  color: #E39774;
+}
+
+.primarybg {
+  background-color: #BEDFFE;
+}
+.primarybd {
+  border-color: #BEDFFE;
+}
+
+
+.secondarybg {
+  background-color: #325273;
+}
+.secondarybd {
+  border-color: #325273;
+}
+
+
+.terbd {
+  background-color: #0A0A0A;
+}
+.terbg {
+  border-color: #0A0A0A;
+}
+
+
+.highlightbg {
+  background-color: #A0DBF8;
+}
+.highlightbd {
+  border-color: #A0DBF8;
+}
+
+
+.altbg {
+  background-color: #E39774;
+}
+.altbd {
+  border-color: #E39774;
+}

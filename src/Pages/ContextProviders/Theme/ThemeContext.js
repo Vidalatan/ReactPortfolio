@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 
+import DARKSTYLE from './styles/darkStyle.module.css';
+import LIGHTSTYLE from './styles/lightStyle.module.css';
 import DarkToggle from './assets/MoonIcoDark.png';
 import LightToggle from './assets/SunIcoLight.png';
 import EdgeDarkIcon from './assets/EdgeZhero_Logo-C.png';
@@ -9,16 +11,19 @@ export const ThemeContext = React.createContext();
 
 function ThemeProvider(props) {
   const [currentTheme, setCurrentTheme] = useState('light');
+  const [currentStyle, setCurrentStyle] = useState(LIGHTSTYLE)
   const [themeToggleIcon, setThemeToggleIcon] = useState(DarkToggle);
   const [headerIcon, setHeaderIcon] = useState(EdgeDarkIcon);
 
   useEffect(() => {
     switch (currentTheme) {
       case 'light':
+        setCurrentStyle(LIGHTSTYLE)
         setThemeToggleIcon(DarkToggle)
         setHeaderIcon(EdgeDarkIcon)
         break;
       case 'dark':
+        setCurrentStyle(DARKSTYLE)
         setThemeToggleIcon(LightToggle)
         setHeaderIcon(EdgeLightIcon)
         break;
@@ -38,12 +43,13 @@ function ThemeProvider(props) {
         break;
       default:
         setCurrentTheme('light')
+        console.error('Invalid theme passed in. Defaulting to light');
         break;
     }
   }
 
   return (
-    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, headerIcon}} {...props} />
+    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, headerIcon, currentStyle}} {...props} />
   )
 }
 
