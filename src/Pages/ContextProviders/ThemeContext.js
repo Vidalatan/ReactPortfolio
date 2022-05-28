@@ -28,8 +28,22 @@ function ThemeProvider(props) {
    }
   }, [currentTheme])
 
+  function toggleCurrentTheme() {
+    switch (currentTheme) {
+      case 'light':
+        setCurrentTheme('dark')
+        break;
+      case 'dark':
+        setCurrentTheme('light')
+        break;
+      default:
+        setCurrentTheme('light')
+        break;
+    }
+  }
+
   return (
-    <ThemeContext.Provider value={{currentTheme, setCurrentTheme, themeToggleIcon, headerIcon}} {...props} />
+    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, headerIcon}} {...props} />
   )
 }
 

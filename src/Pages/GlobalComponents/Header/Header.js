@@ -6,21 +6,7 @@ import wf from '../../../wireframeTools.module.css';
 const {wfbr, wfbb, wfbg, wffr, wffb, wffg} = wf // Wireframing tools
 
 export default function Header() {
-  const {themeToggleIcon, headerIcon, setCurrentTheme, currentTheme} = useContext(ThemeContext);
-
-  function toggleTheme() {
-    switch (currentTheme) {
-      case 'light':
-        setCurrentTheme('dark')
-        break;
-      case 'dark':
-        setCurrentTheme('light')
-        break;
-      default:
-        setCurrentTheme('light')
-        break;
-    }
-  }
+  const {themeToggleIcon, headerIcon, toggleCurrentTheme} = useContext(ThemeContext);
 
   return (
     <header>
@@ -39,7 +25,7 @@ export default function Header() {
           <img 
             src={themeToggleIcon} 
             style={{'cursor':'pointer'}} 
-            onClick={toggleTheme} />
+            onClick={toggleCurrentTheme} />
         </div>
       </nav>
     </header>
