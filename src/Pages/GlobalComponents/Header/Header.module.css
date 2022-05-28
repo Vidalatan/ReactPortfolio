@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.headerIcon {
+
+}
+
+.headerName {
+
+}
+
+.navBar {
+
+}
+
+.navLinksContainer {
+  
+}
+
+
+
+/* WireFraming tools */
+/* ----------------- */
+/* wf = wire frame | b = border, f = fill */
+
+.wfbr {
+  border: 2px solid red;
+}
+
+.wfbb {
+  border: 2px solid blue;
+}
+
+.wfbg {
+  border: 2px solid green;
+}
+
+.wffr {
+  background-color: red; 
+}
+
+.wffb {
+  background-color: blue; 
+}
+
+.wffg {
+  background-color: green; 
+}
