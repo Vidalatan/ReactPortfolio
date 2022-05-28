@@ -1,50 +1,46 @@
 header {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
 .headerIcon {
-
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  width: 45px;
+  height: 45px;
+  margin-left: 50px;
 }
 
 .headerName {
-
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: center;
+  text-align: center;
+  width: 25%;
 }
 
 .navBar {
-
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
 }
 
 .navLinksContainer {
-  
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  list-style: none;
+  width: 80%;
 }
 
-
-
-/* WireFraming tools */
-/* ----------------- */
-/* wf = wire frame | b = border, f = fill */
-
-.wfbr {
-  border: 2px solid red;
-}
-
-.wfbb {
-  border: 2px solid blue;
-}
-
-.wfbg {
-  border: 2px solid green;
-}
-
-.wffr {
-  background-color: red; 
-}
-
-.wffb {
-  background-color: blue; 
-}
-
-.wffg {
-  background-color: green; 
+.navThemeToggle {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 45px;
+  height: 45px;
+  margin-right: 50px;
 }

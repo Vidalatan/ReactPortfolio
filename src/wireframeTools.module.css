@@ -1,0 +1,29 @@
+/* WireFraming tools */
+/* ----------------- */
+/* wf = wire frame | b = border, f = fill | Make sure to include below in files */
+/* import wf from <relative path> */
+/* const {wfbr, wfbb, wfbg, wffr, wffb, wffg} = wf */
+
+.wfbr {
+  border: 2px solid red;
+}
+
+.wfbb {
+  border: 2px solid blue;
+}
+
+.wfbg {
+  border: 2px solid green;
+}
+
+.wffr {
+  background-color: red; 
+}
+
+.wffb {
+  background-color: blue; 
+}
+
+.wffg {
+  background-color: green; 
+}
