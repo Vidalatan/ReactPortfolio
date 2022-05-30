@@ -1,7 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 header {
+  position: fixed;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  width: 100%;
+  height: 100px;
 }
 
 
@@ -40,10 +48,16 @@ header {
 
 .navLinksMenu {
   display: none;
+  cursor: pointer;
   width: 45px;
   height: 45px;
-  background-color: rebeccapurple;
-  /* margin-right: 50px; */
+}
+
+.menuBar {
+  width: 45px;
+  height: 5px;
+  margin: 5px 0;
+  background-color: black;
 }
 
 .navLinksDrop {
@@ -67,17 +81,26 @@ header {
   margin: 0 50px 0 25px;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 768px) {
   .headerIcon {
     margin-left: 25px;
   }
   
   .navLinksContainer {
-    display: none;
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    top: 100px;
+    right: -35%;
   }
 
   .navLinksMenu {
     display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .navLink {
+    margin: 10px 20px;
   }
 
   .navThemeToggle {

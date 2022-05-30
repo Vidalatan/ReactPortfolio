@@ -1,31 +1,32 @@
 .themeText {
-  color: black;
+  color: white;
 }
 .themeAltText {
   color: #E39774;
 }
 
+
 .primarybg {
-  background-color: #BEDFFE;
-}
-.primarybd {
-  border-color: #BEDFFE;
-}
-
-
-.secondarybg {
   background-color: #325273;
 }
-.secondarybd {
+.primarybd {
   border-color: #325273;
 }
 
 
-.terbd {
+.secondarybg {
   background-color: #0A0A0A;
 }
-.terbg {
+.secondarybd {
   border-color: #0A0A0A;
+}
+
+
+.terbg {
+  background-color: #BEDFFE;
+}
+.terbd {
+  border-color: #BEDFFE;
 }
 
 

@@ -11,7 +11,7 @@ export const ThemeContext = React.createContext();
 
 function ThemeProvider(props) {
   const [currentTheme, setCurrentTheme] = useState('light');
-  const [currentStyle, setCurrentStyle] = useState(LIGHTSTYLE)
+  const [currentStyle, setCurrentStyle] = useState(LIGHTSTYLE);
   const [themeToggleIcon, setThemeToggleIcon] = useState(DarkToggle);
   const [headerIcon, setHeaderIcon] = useState(EdgeDarkIcon);
 
