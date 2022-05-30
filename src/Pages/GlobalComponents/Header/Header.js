@@ -12,6 +12,13 @@ export default function Header() {
     document.querySelector(`.${classes.navLinksMenu}`).classList.toggle(classes.active);
   }
   
+  function navThemeToggleF(e) {
+    toggleCurrentTheme();
+    document.querySelectorAll(`.${classes.active}`).forEach((item) => {
+      item.classList.toggle(classes.active);
+    })
+  }
+  
   return (
     <header className={currentStyle.secondarybg}>
       <div className={classes.headerIcon}><img src={headerIcon} /></div>
@@ -35,7 +42,7 @@ export default function Header() {
           <img 
             src={themeToggleIcon} 
             style={{'cursor':'pointer'}} 
-            onClick={toggleCurrentTheme} 
+            onClick={navThemeToggleF} 
           />
         </div>
       </nav>
