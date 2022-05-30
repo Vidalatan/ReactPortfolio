@@ -26,9 +26,9 @@ export default function Header() {
         </ul>
 
         <div className={classes.navLinksMenu} onClick={toggleMenu}>
-          <div className={classes.menuBar} />
-          <div className={classes.menuBar} />
-          <div className={classes.menuBar} />
+          <div className={classify(classes.menuBar, currentStyle.terbg)} />
+          <div className={classify(classes.menuBar, currentStyle.terbg)} />
+          <div className={classify(classes.menuBar, currentStyle.terbg)} />
         </div>
 
         <div className={classes.navThemeToggle}>
