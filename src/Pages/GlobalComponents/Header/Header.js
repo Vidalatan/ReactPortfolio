@@ -13,7 +13,7 @@ export default function Header() {
       <div className={classes.headerIcon}><img src={headerIcon} /></div>
 
       <h1 className={classify(classes.headerName,currentStyle.themeAltText)}>Vidal</h1>
-      <nav className={classes.navBar}>
+      <nav>
 
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText, currentStyle.secondarybg)}>
           <li className={classes.navLink}>Projects</li>
