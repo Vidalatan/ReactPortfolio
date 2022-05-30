@@ -7,6 +7,10 @@ import classes from './Header.module.css';
 export default function Header() {
   const {themeToggleIcon, headerIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
 
+  function toggleMenu(e) {
+    document.querySelector(`.${classes.navLinksContainer}`).classList.toggle(classes.active);
+    document.querySelector(`.${classes.navLinksMenu}`).classList.toggle(classes.active);
+  }
   
   return (
     <header className={currentStyle.secondarybg}>
@@ -21,7 +25,7 @@ export default function Header() {
           <li className={classes.navLink}>GET IN TOUCH</li>
         </ul>
 
-        <div className={classes.navLinksMenu}>
+        <div className={classes.navLinksMenu} onClick={toggleMenu}>
           <div className={classes.menuBar} />
           <div className={classes.menuBar} />
           <div className={classes.menuBar} />
@@ -31,7 +35,8 @@ export default function Header() {
           <img 
             src={themeToggleIcon} 
             style={{'cursor':'pointer'}} 
-            onClick={toggleCurrentTheme} />
+            onClick={toggleCurrentTheme} 
+          />
         </div>
       </nav>
     </header>
