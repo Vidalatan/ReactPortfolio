@@ -1,17 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react';
-import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
-import classify from '../../../utils/classify';
+import React, {useEffect, useState} from 'react';
 
 import classes from '../Main.module.css';
 
 export default function Intro() {
   // Timing Settings (for convenience)
     const highlightInterval = 50;
-    const typingInterval = 100;
+    const typingInterval = 75;
     const delayInterval = 1000;
   // ---------------------------------
-
-  const {currentStyle} = useContext(ThemeContext);
 
   const greeterMsgE = 'Hello, it\'s nice to meet you...';
   const greeterMsgC = '你好, 很高兴认识你...';
@@ -22,6 +18,7 @@ export default function Intro() {
   }
 
   const [currentGreetMsg, setCurrentGreetMsg] = useState(makeSpanSequence(greeterMsgC))
+  const [typerEngaged, setTyperEngaged] = useState(false)
 
   function greeterTyper() {
     function highlighter() {
@@ -41,19 +38,19 @@ export default function Intro() {
     }
 
     function clearGreeting() {
-      setCurrentGreetMsg([""])
+      setCurrentGreetMsg([(<br key={'br'} />)])
       setTimeout(typeNew, delayInterval)
     }
 
     function typeNew() {
       const newMessage = makeSpanSequence(greeterMsgE);
-      let index = -1;
+      let index = 0;
+      setCurrentGreetMsg([newMessage[0]])
       const typeTime = setInterval(() => {
         if (index >= newMessage.length){
           clearInterval(typeTime)
         } else {
           setCurrentGreetMsg(prev => {
-            console.log(index);
             const _ = [...prev, newMessage[index]]
             return _
           })
@@ -62,12 +59,17 @@ export default function Intro() {
       }, typingInterval);
     }
 
-    highlighter()
+    setTimeout(highlighter, 1500);
   }
+
+  useEffect(() => {
+    (typerEngaged ? greeterTyper() : setTyperEngaged(true))
+  }, [typerEngaged])
+
 
   return (
     <>
-    <h2 className={classes.typerGreeting} onClick={greeterTyper}>{currentGreetMsg}</h2>
+    <h2 className={classes.typerGreeting}>{currentGreetMsg}</h2>
 
     <p>I am a full-stack web developer focusing on UI/UX design.</p>
     
