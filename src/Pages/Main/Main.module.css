@@ -5,9 +5,39 @@
 
 main {
   transition: 0.7s;
+  padding: 25px;
+}
+
+.typerGreeting {
+  font-size: 2.5rem;
+}
+
+.introStack {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  padding: 25px 150px;
+  font-size: 1.75rem;
+}
+
+.moreButton {
+  width: 150px;
+  align-self: flex-end;
+  margin: 25px;
 }
 
 .typerH {
   background-color: #0078d7;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .typerGreeting {
+    font-size: 1.5rem;
+  }
+
+  .introStack {
+    padding: 25px;
+    font-size: 1rem;
+  }
 }

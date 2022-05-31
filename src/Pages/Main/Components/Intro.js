@@ -71,16 +71,19 @@ export default function Intro() {
     <>
     <h2 className={classes.typerGreeting}>{currentGreetMsg}</h2>
 
-    <p>I am a full-stack web developer focusing on UI/UX design.</p>
-    
-    <p>
-      I recently graduated from a rigorous bootcamp hosted by SMU where I 
-      learned how to make fun and appealing applications. I have been invested 
-      in technology, more specifically programming, for many years and have decided 
-      it's time to finally step up my game.
-    </p>
+    <div className={classes.introStack}>
+      <p>I am a full-stack web developer focusing on UI/UX design.</p>
+      
+      <p>
+        I recently graduated from a rigorous bootcamp hosted by SMU where I 
+        learned how to make fun and appealing applications. I have been invested 
+        in technology, more specifically programming, for many years and have decided 
+        it's time to finally step up my game.
+      </p>
+      
+      <button className={classes.moreButton}>More about me...</button>
+    </div>
 
-    <button>More about me...</button>
     </>
   )
 }
