@@ -5,6 +5,17 @@
 
 footer {
   position: relative;
+  width: 100%;
+}
+
+.iconsContainer {
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.footerIcon {
+  width: 45px;
 }

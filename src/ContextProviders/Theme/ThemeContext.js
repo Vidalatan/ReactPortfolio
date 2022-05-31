@@ -6,26 +6,31 @@ import DarkToggle from './assets/MoonIcoDark.png';
 import LightToggle from './assets/SunIcoLight.png';
 import EdgeDarkIcon from './assets/EdgeZhero_Logo-C.png';
 import EdgeLightIcon from './assets/EdgeZhero_Logo_W-C.png';
+import GitHubDark from './assets/GitHub-Mark.png';
+import GitHubLight from './assets/GitHub-Mark-Light.png';
 
 export const ThemeContext = React.createContext();
 
 function ThemeProvider(props) {
   const [currentTheme, setCurrentTheme] = useState('light');
   const [currentStyle, setCurrentStyle] = useState(LIGHTSTYLE);
+  const [mainIcon, setMainIcon] = useState(EdgeDarkIcon);
   const [themeToggleIcon, setThemeToggleIcon] = useState(DarkToggle);
-  const [headerIcon, setHeaderIcon] = useState(EdgeDarkIcon);
+  const [gitHubIcon, setGitHubIcon] = useState(GitHubDark);
 
   useEffect(() => {
     switch (currentTheme) {
       case 'light':
         setCurrentStyle(LIGHTSTYLE)
         setThemeToggleIcon(DarkToggle)
-        setHeaderIcon(EdgeDarkIcon)
+        setMainIcon(EdgeDarkIcon)
+        setGitHubIcon(GitHubDark)
         break;
       case 'dark':
         setCurrentStyle(DARKSTYLE)
         setThemeToggleIcon(LightToggle)
-        setHeaderIcon(EdgeLightIcon)
+        setMainIcon(EdgeLightIcon)
+        setGitHubIcon(GitHubLight)
         break;
       default:
         setCurrentTheme('light')
@@ -49,7 +54,7 @@ function ThemeProvider(props) {
   }
 
   return (
-    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, headerIcon, currentStyle}} {...props} />
+    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, mainIcon, currentStyle, gitHubIcon}} {...props} />
   )
 }
 

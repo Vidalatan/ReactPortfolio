@@ -5,7 +5,7 @@ import classify from '../../../utils/classify';
 import classes from './Header.module.css';
 
 export default function Header() {
-  const {themeToggleIcon, headerIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
+  const {themeToggleIcon, mainIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
 
   const [menuActive, setMenuActive] = useState(false)
 
@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
     <header className={currentStyle.secondarybg}>
-      <div className={classes.headerIcon}><img src={headerIcon} /></div>
+      <div className={classes.mainIcon}><img src={mainIcon} /></div>
 
       <h1 className={classify(classes.headerName,currentStyle.themeAltText)}>Vidal</h1>
       <nav>
