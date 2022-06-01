@@ -22,6 +22,9 @@ main {
 
 .moreButton {
   width: 150px;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
   align-self: flex-end;
   margin: 25px;
 }

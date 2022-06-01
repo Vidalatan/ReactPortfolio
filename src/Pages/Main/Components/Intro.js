@@ -1,8 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
+import classify from '../../../utils/classify';
 
 import classes from '../Main.module.css';
 
 export default function Intro() {
+  const { currentStyle } = useContext(ThemeContext);
+
   // Timing Settings (for convenience)
     const highlightInterval = 50;
     const typingInterval = 75;
@@ -81,7 +85,7 @@ export default function Intro() {
         it's time to finally step up my game.
       </p>
       
-      <button className={classes.moreButton}>More about me...</button>
+      <button className={classify(classes.moreButton, currentStyle.altbg, currentStyle.themeText)}>More about me...</button>
     </div>
 
     </>
