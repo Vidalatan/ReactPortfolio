@@ -69,6 +69,8 @@ nav {
 }
 
 .navLink {
+  display: flex;
+  align-items: center;
   margin: 0 20px;
   font-size: 1.25rem;
   transition: 0.7s ease;
@@ -77,6 +79,17 @@ nav {
 
 .navLink:hover {
   font-size: 1.75rem;
+}
+
+.cubeAdjuster {
+  width: 2rem;
+  height: 2rem;
+  transition: 0.7s;
+}
+
+.navLink:hover .cubeAdjuster {
+  width: 3rem;
+  height: 3rem;
 }
 
 .navThemeToggle {

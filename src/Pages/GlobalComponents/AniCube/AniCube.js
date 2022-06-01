@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
+
 import classes from './AniCube.module.css';
 
 
-export default function Projects({canvasWidth, canvasHeight}) {
+export default function Projects({canvasWidth, canvasHeight, optionalStyle}) {
   const { currentTheme } = useContext(ThemeContext)
   const aniCube = useRef()
 
@@ -20,7 +21,7 @@ export default function Projects({canvasWidth, canvasHeight}) {
       
 
       var canvas = document.createElement("canvas");
-      canvas.style = `width: ${(canvasWidth ?? '2')}rem ; height: ${canvasHeight ?? '2'}rem`;
+      optionalStyle ? canvas.classList.add(optionalStyle) : canvas.style = `width: ${(canvasWidth ?? '2')}rem ; height: ${canvasHeight ?? '2'}rem`;
       aniCube.current.appendChild(canvas);
       var ctx = canvas.getContext("2d");
       

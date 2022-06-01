@@ -23,9 +23,9 @@ export default function Header() {
       <nav>
 
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText, currentStyle.secondarybg, (menuActive ? classes.active : ''))}>
-          <li className={classes.navLink}> <AniCube /> Projects</li>
-          <li className={classes.navLink}> <AniCube /> About Me</li>
-          <li className={classes.navLink}> <AniCube /> GET IN TOUCH</li>
+          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/>Projects</li>
+          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/>About Me</li>
+          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/>GET IN TOUCH</li>
         </ul>
 
         <div className={classify(classes.navLinksMenu, (menuActive ? classes.active : ''))} onClick={toggleMenu}>
