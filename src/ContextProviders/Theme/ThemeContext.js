@@ -54,7 +54,7 @@ function ThemeProvider(props) {
   }
 
   return (
-    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, mainIcon, currentStyle, gitHubIcon}} {...props} />
+    <ThemeContext.Provider value={{toggleCurrentTheme, themeToggleIcon, mainIcon, currentStyle, gitHubIcon, currentTheme}} {...props} />
   )
 }
 

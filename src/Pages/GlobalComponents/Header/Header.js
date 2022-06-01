@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react';
+import AniCube from '../AniCube/AniCube';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import classify from '../../../utils/classify';
 
@@ -22,9 +23,9 @@ export default function Header() {
       <nav>
 
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText, currentStyle.secondarybg, (menuActive ? classes.active : ''))}>
-          <li className={classes.navLink}>Projects</li>
-          <li className={classes.navLink}>About Me</li>
-          <li className={classes.navLink}>GET IN TOUCH</li>
+          <li className={classes.navLink}> <AniCube /> Projects</li>
+          <li className={classes.navLink}> <AniCube /> About Me</li>
+          <li className={classes.navLink}> <AniCube /> GET IN TOUCH</li>
         </ul>
 
         <div className={classify(classes.navLinksMenu, (menuActive ? classes.active : ''))} onClick={toggleMenu}>
