@@ -22,6 +22,7 @@ export default function Intro() {
   }
 
   const [currentGreetMsg, setCurrentGreetMsg] = useState(makeSpanSequence(greeterMsgC))
+  const [typeInto, setTypeInto] =useState('E')
   const [typerEngaged, setTyperEngaged] = useState(false)
 
   function greeterTyper() {
@@ -47,18 +48,29 @@ export default function Intro() {
     }
 
     function typeNew() {
-      const newMessage = makeSpanSequence(greeterMsgE);
+      const newMessage = (typeInto === 'E') ? makeSpanSequence(greeterMsgE) : makeSpanSequence(greeterMsgC);
       let index = 0;
-      setCurrentGreetMsg([newMessage[0]])
       const typeTime = setInterval(() => {
+        const tmp = index;
         if (index >= newMessage.length){
           clearInterval(typeTime)
+          switch (typeInto) {
+            case 'C':
+              setTypeInto('E')
+              setTyperEngaged(false)
+              break;
+            case 'E':
+              setTypeInto('C')
+              setTyperEngaged(false)
+              break;
+          }
         } else {
+          (index == 0 && setCurrentGreetMsg([]))
           setCurrentGreetMsg(prev => {
-            const _ = [...prev, newMessage[index]]
+            const _ = [...prev, newMessage[tmp]]
             return _
           })
-          index++
+          index++;
         }
       }, typingInterval);
     }
@@ -85,7 +97,7 @@ export default function Intro() {
         it's time to finally step up my game.
       </p>
       
-      <button className={classify(classes.moreButton, currentStyle.altbg, currentStyle.themeText)}>More about me...</button>
+      <button className={classify(classes.moreButton,classes.button57, currentStyle.altbg, currentStyle.themeText)}>More about me...</button>
     </div>
 
     </>
