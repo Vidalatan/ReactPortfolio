@@ -75,6 +75,7 @@ nav {
   font-size: 1.25rem;
   transition: 0.7s ease;
   cursor: pointer;
+  line-height: 0;
 }
 
 .navLink:hover {
@@ -82,14 +83,14 @@ nav {
 }
 
 .cubeAdjuster {
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   transition: 0.7s;
 }
 
 .navLink:hover .cubeAdjuster {
-  width: 3rem;
-  height: 3rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .navThemeToggle {
