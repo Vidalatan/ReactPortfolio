@@ -298,8 +298,7 @@ export default function ProjectsCube() {
           this.emit('sideChange');
         }
       }
-
-      console.log(this);
+      
       this.element.style[userPrefix.js + 'Transform'] = 'rotateX(' + this.positionY + 'deg) rotateY(' + this.positionX + 'deg)';
 
       if(this.positionY != this.previousPositionY || this.positionX != this.previousPositionX) {
