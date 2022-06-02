@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import ProjectsCube from '../../GlobalComponents/ProjectsCube/ProjectsCube';
 
 
 export default function Projects() {
@@ -7,6 +8,7 @@ export default function Projects() {
   return (
     <>
     <div ref={projectDisplay}>Projects displayed here...</div>
+    <ProjectsCube />
     </>
   )
 }
