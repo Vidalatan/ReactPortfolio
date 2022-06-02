@@ -107,8 +107,91 @@ export default function ProjectsCube() {
   }
   // 
 
-
+  // Viewport constructor
+  function Viewport(data) {
+    events.add(this);
   
+    var self = this;
+  
+    this.element = data.element;
+    this.fps = data.fps;
+    this.sensivity = data.sensivity;
+    this.sensivityFade = data.sensivityFade;
+    this.touchSensivity = data.touchSensivity;
+    this.speed = data.speed;
+  
+    this.lastX = 0;
+    this.lastY = 0;
+    this.mouseX = 0;
+    this.mouseY = 0;
+    this.distanceX = 0;
+    this.distanceY = 0;
+    this.positionX = 1122;
+    this.positionY = 136;
+    this.torqueX = 0;
+    this.torqueY = 0;
+  
+    this.down = false;
+    this.upsideDown = false;
+  
+    this.previousPositionX = 0;
+    this.previousPositionY = 0;
+  
+    this.currentSide = 0;
+    this.calculatedSide = 0;
+  
+  
+    bindEvent(document, 'mousedown', function() {
+      self.down = true;
+    });
+  
+    bindEvent(document, 'mouseup', function() {
+      self.down = false;
+    });
+    
+    bindEvent(document, 'keyup', function() {
+      self.down = false;
+    });
+  
+    bindEvent(document, 'mousemove', function(e) {
+      self.mouseX = e.pageX;
+      self.mouseY = e.pageY;
+    });
+  
+    bindEvent(document, 'touchstart', function(e) {
+  
+      self.down = true;
+      e.touches ? e = e.touches[0] : null;
+      self.mouseX = e.pageX / self.touchSensivity;
+      self.mouseY = e.pageY / self.touchSensivity;
+      self.lastX  = self.mouseX;
+      self.lastY  = self.mouseY;
+    });
+  
+    bindEvent(document, 'touchmove', function(e) {
+      if(e.preventDefault) { 
+        e.preventDefault();
+      }
+  
+      if(e.touches.length == 1) {
+  
+        e.touches ? e = e.touches[0] : null;
+  
+        self.mouseX = e.pageX / self.touchSensivity;
+        self.mouseY = e.pageY / self.touchSensivity;
+  
+      }
+    });
+  
+    bindEvent(document, 'touchend', function(e) {
+      self.down = false;
+    });  
+  
+    setInterval(this.animate.bind(this), this.fps);
+  
+  }
+  // 
+
 
 
 
