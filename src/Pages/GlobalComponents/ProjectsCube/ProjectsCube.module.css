@@ -9,6 +9,7 @@
 }
 
 .viewport {
+  margin: 200px auto 300px auto;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
   -ms-perspective: 800px;
@@ -19,11 +20,11 @@
   -ms-perspective-origin: 50% 200px;
   -o-perspective-origin: 50% 200px;
   perspective-origin: 50% 200px;
-  -webkit-transform: scale(0.8, 0.8);
-  -moz-transform: scale(0.8, 0.8);
-  -ms-transform: scale(0.8, 0.8);
-  -o-transform: scale(0.8, 0.8);
-  transform: scale(0.8, 0.8);
+  -webkit-transform: scale(2, 2);
+  -moz-transform: scale(2, 2);
+  -ms-transform: scale(2, 2);
+  -o-transform: scale(2, 2);
+  transform: scale(2, 2);
 }
 
 .cube {
@@ -158,9 +159,10 @@ object:hover {
 
 @media (max-width: 640px) {
   .viewport {
-    -webkit-transform: scale(0.6, 0.6);
-    -moz-transform: scale(0.6, 0.6);
-    -ms-transform: scale(0.6, 0.6);
-    -o-transform: scale(0.6, 0.6);
-    transform: scale(0.6, 0.6); } 
+    margin: 100px auto;
+    -webkit-transform: scale(.75, .75);
+    -moz-transform: scale(.75, .75);
+    -ms-transform: scale(.75, .75);
+    -o-transform: scale(.75, .75);
+    transform: scale(.75, .75); } 
   }
