@@ -51,7 +51,7 @@ nav {
   justify-content: space-evenly;
   list-style: none;
   width: 80%;
-  transition: 0.7s ease;
+  transition: background-color 0.7s ease, right 1.25s ease;
 }
 
 .navLinksMenu {
