@@ -5,6 +5,7 @@ import classes from './ProjectsCube.module.css';
 
 export default function ProjectsCube() {
 
+  // Events contructor
   var events = new Events();
   events.add = function(obj) {
     obj.events = { };
@@ -77,6 +78,37 @@ export default function ProjectsCube() {
     }
     return this;
   }
+  // 
+
+  // Determine prefix
+  var userPrefix;
+  var prefix = (function () {
+    var styles = window.getComputedStyle(document.documentElement, ''),
+      pre = (Array.prototype.slice
+        .call(styles)
+        .join('') 
+        .match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
+      )[1],
+      dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
+    userPrefix = {
+      dom: dom,
+      lowercase: pre,
+      css: '-' + pre + '-',
+      js: pre[0].toUpperCase() + pre.substr(1)
+    };
+  })();
+
+  function bindEvent(element, type, handler) {
+    if(element.addEventListener) {
+      element.addEventListener(type, handler, false);
+    } else {
+      element.attachEvent('on' + type, handler);
+    }
+  }
+  // 
+
+
+  
 
 
 
