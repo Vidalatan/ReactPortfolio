@@ -263,7 +263,7 @@ export default function ProjectsCube() {
 
         if(!(this.positionY >= 46 && this.positionY <= 130) && !(this.positionY >= 220 && this.positionY <= 308)) {
           if(this.upsideDown) {
-            if(this.positionX >= 42 && this.positionX <= 130) {
+            if(this.positionX >= 63 && this.positionX <= 130) {
               this.calculatedSide = 3;
             } else if(this.positionX >= 131 && this.positionX <= 223) {
               this.calculatedSide = 2;
