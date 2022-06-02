@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import classify from '../../../utils/classify';
 
 import classes from './ProjectsCube.module.css';
 
 export default function ProjectsCube() {
+  const { currentStyle } = useContext(ThemeContext)
 
   const [isMounted, setIsMounted] = useState(false)
 
@@ -263,7 +265,7 @@ export default function ProjectsCube() {
 
         if(!(this.positionY >= 46 && this.positionY <= 130) && !(this.positionY >= 220 && this.positionY <= 308)) {
           if(this.upsideDown) {
-            if(this.positionX >= 63 && this.positionX <= 130) {
+            if(this.positionX >= 42 && this.positionX <= 130) {
               this.calculatedSide = 3;
             } else if(this.positionX >= 131 && this.positionX <= 223) {
               this.calculatedSide = 2;
@@ -373,21 +375,21 @@ export default function ProjectsCube() {
   return (
     <div id="wrapper">
     <div className={classes.viewport}>
-      <div className={classes.cube}>
+      <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
-          <div className={classes.cubeImage}>1</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>1</div>
         </div>
         <div className={classes.side}>
-          <div className={classes.cubeImage}>2</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>2</div>
         </div>
         <div className={classes.side}>
-          <div className={classes.cubeImage}>3</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>3</div>
         </div>
         <div className={classes.side}>
-          <div className={classes.cubeImage}>4</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>4</div>
         </div>
         <div className={classes.side}>
-          <div className={classes.cubeImage}>5</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>5</div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, classes.active)}>6</div>

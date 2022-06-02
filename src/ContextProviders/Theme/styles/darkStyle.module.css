@@ -48,3 +48,13 @@
 .altbd {
   border-color: #E39774;
 }
+
+.cube > div {
+  background-color: #0A0A0A;
+  background-position: center;
+  border: 2px solid #325273;
+}
+
+.cube > div > div.cubeImage {
+  color: #BEDFFE;
+}
