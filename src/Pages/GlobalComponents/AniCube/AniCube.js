@@ -1,22 +1,20 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 
 import classes from './AniCube.module.css';
 
 
 export default function Projects({canvasWidth, canvasHeight, optionalStyle}) {
-  const { currentTheme } = useContext(ThemeContext)
   const aniCube = useRef()
 
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     if (isMounted) {
-      const COLOR_BG = (currentTheme == 'light' ? '#325273': '#0A0A0A');
-      const COLOR_CUBE = "yellow";
-      const SPEED_X = 0.05;
-      const SPEED_Y = 0.15;
-      const SPEED_Z = 0.10;
+      (aniCube.current.firstChild && aniCube.current.firstChild.remove())
+      const COLOR_CUBE = "#E39774";
+      const SPEED_X= Math.random()*0.25;
+      const SPEED_Y = Math.random()*0.25;
+      const SPEED_Z = Math.random()*0.25;
       const POINT3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
       
 
@@ -30,9 +28,8 @@ export default function Projects({canvasWidth, canvasHeight, optionalStyle}) {
       canvas.height = h;
       canvas.width = w;
 
-      ctx.fillStyle = COLOR_BG;
       ctx.strokeStyle = COLOR_CUBE;
-      ctx.lineWidth = w / 100;
+      ctx.lineWidth = w / 35;
       ctx.lineCap = "round";
       
 
@@ -61,57 +58,57 @@ export default function Projects({canvasWidth, canvasHeight, optionalStyle}) {
       requestAnimationFrame(loop);
       
       function loop(timeNow) {
-      
+        ctx.clearRect(0,0,w,h)
+        timeDelta = timeNow - timeLast;
+        timeLast = timeNow;
+    
 
-          timeDelta = timeNow - timeLast;
-          timeLast = timeNow;
-      
-
-          ctx.fillRect(0, 0, w, h);
-      
-          // z axis
-          let angle = timeDelta * 0.001 * SPEED_Z * Math.PI * 2;
-          for (let v of vertices) {
-              let dx = v.x - cx;
-              let dy = v.y - cy;
-              let x = dx * Math.cos(angle) - dy * Math.sin(angle);
-              let y = dx * Math.sin(angle) + dy * Math.cos(angle);
-              v.x = x + cx;
-              v.y = y + cy;
-          }
-      
-          // x axis
-          angle = timeDelta * 0.001 * SPEED_X * Math.PI * 2;
-          for (let v of vertices) {
-              let dy = v.y - cy;
-              let dz = v.z - cz;
-              let y = dy * Math.cos(angle) - dz * Math.sin(angle);
-              let z = dy * Math.sin(angle) + dz * Math.cos(angle);
-              v.y = y + cy;
-              v.z = z + cz;
-          }
-      
-          // y axis
-          angle = timeDelta * 0.001 * SPEED_Y * Math.PI * 2;
-          for (let v of vertices) {
-              let dx = v.x - cx;
-              let dz = v.z - cz;
-              let x = dz * Math.sin(angle) + dx * Math.cos(angle);
-              let z = dz * Math.cos(angle) - dx * Math.sin(angle);
-              v.x = x + cx;
-              v.z = z + cz;
-          }
-      
-          // draw each edge
-          for (let edge of edges) {
-              ctx.beginPath();
-              ctx.moveTo(vertices[edge[0]].x, vertices[edge[0]].y);
-              ctx.lineTo(vertices[edge[1]].x, vertices[edge[1]].y);
-              ctx.stroke();
-          }
-      
-          // call the next frame
-          requestAnimationFrame(loop);
+        ctx.fillStyle = 'rgba(0,0,0,0)'
+        ctx.fillRect(0, 0, w, h);
+    
+        // z axis
+        let angle = timeDelta * 0.001 * SPEED_Z * Math.PI * 2;
+        for (let v of vertices) {
+            let dx = v.x - cx;
+            let dy = v.y - cy;
+            let x = dx * Math.cos(angle) - dy * Math.sin(angle);
+            let y = dx * Math.sin(angle) + dy * Math.cos(angle);
+            v.x = x + cx;
+            v.y = y + cy;
+        }
+    
+        // x axis
+        angle = timeDelta * 0.001 * SPEED_X * Math.PI * 2;
+        for (let v of vertices) {
+            let dy = v.y - cy;
+            let dz = v.z - cz;
+            let y = dy * Math.cos(angle) - dz * Math.sin(angle);
+            let z = dy * Math.sin(angle) + dz * Math.cos(angle);
+            v.y = y + cy;
+            v.z = z + cz;
+        }
+    
+        // y axis
+        angle = timeDelta * 0.001 * SPEED_Y * Math.PI * 2;
+        for (let v of vertices) {
+            let dx = v.x - cx;
+            let dz = v.z - cz;
+            let x = dz * Math.sin(angle) + dx * Math.cos(angle);
+            let z = dz * Math.cos(angle) - dx * Math.sin(angle);
+            v.x = x + cx;
+            v.z = z + cz;
+        }
+    
+        // draw each edge
+        for (let edge of edges) {
+            ctx.beginPath();
+            ctx.moveTo(vertices[edge[0]].x, vertices[edge[0]].y);
+            ctx.lineTo(vertices[edge[1]].x, vertices[edge[1]].y);
+            ctx.stroke();
+        }
+    
+        // call the next frame
+        requestAnimationFrame(loop);
       }
     } else {
       setIsMounted(true)
