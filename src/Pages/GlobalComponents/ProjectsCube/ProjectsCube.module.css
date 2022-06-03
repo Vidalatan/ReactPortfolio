@@ -161,6 +161,15 @@ object:hover {
   opacity: 1; 
 }
 
+/* Does not prevent drag in Firefox */
+.unDrag {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
 @media (max-width: 640px) {
   .viewport {
     margin: 100px auto;

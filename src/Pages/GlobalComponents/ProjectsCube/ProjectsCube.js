@@ -2,10 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import classify from '../../../utils/classify';
 
+import projects from './Projects';
 import classes from './ProjectsCube.module.css';
 
 export default function ProjectsCube() {
-  const { currentStyle } = useContext(ThemeContext)
+  const { currentStyle, currentTheme } = useContext(ThemeContext)
 
   const [isMounted, setIsMounted] = useState(false)
 
@@ -377,22 +378,36 @@ export default function ProjectsCube() {
     <div className={classes.viewport}>
       <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>1</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
+            <a href={projects[0].repoURL}>
+              <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
+            </a>
+          </div>
         </div>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>2</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
+            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[1].img : projects[1].darkImg)} />
+          </div>
         </div>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>3</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
+            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[2].img : projects[2].darkImg)} />
+          </div>
         </div>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>4</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
+            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[3].img : projects[3].darkImg)} />
+          </div>
         </div>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>5</div>
+          <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
+            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[4].img : projects[4].darkImg)} />
+          </div>
         </div>
         <div className={classes.side}>
-          <div className={classify(classes.cubeImage, classes.active)}>6</div>
+          <div className={classify(classes.cubeImage, classes.active)}>
+            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[5].img : projects[5].darkImg)} />
+          </div>
         </div>
       </div>
     </div>
