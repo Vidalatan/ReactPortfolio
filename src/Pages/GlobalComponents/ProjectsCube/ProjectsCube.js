@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import classify from '../../../utils/classify';
+import RouteModals from '../RouteModals/RouteModals';
 
 import projects from './Projects';
 import classes from './ProjectsCube.module.css';
@@ -9,6 +10,15 @@ export default function ProjectsCube() {
   const { currentStyle, currentTheme } = useContext(ThemeContext)
 
   const [isMounted, setIsMounted] = useState(false)
+  const [modalsSettings, setModalsSettings] = useState({leftUrl:null, rightUrl:null})
+
+  function toggleShowModals(left, right){
+    if(modalsSettings.active) {
+      setModalsSettings({leftUrl:null, rightUrl:null})
+    } else {
+      setModalsSettings({leftUrl:left, rightUrl:right})
+    }
+  }
 
 
   useEffect(() => {
@@ -374,6 +384,7 @@ export default function ProjectsCube() {
   }
 
   return (
+    <>
     <div className={classes.wrapper}>
     <div className={classes.viewport}>
       <div className={classify(classes.cube, currentStyle.cube)}>
@@ -410,5 +421,7 @@ export default function ProjectsCube() {
       </div>
     </div>
   </div>
+  <RouteModals leftPane={modalsSettings.leftUrl} rightPane={modalsSettings.rightUrl}/>
+  </>
   )
 }

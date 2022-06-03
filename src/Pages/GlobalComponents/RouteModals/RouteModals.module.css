@@ -1,0 +1,23 @@
+.leftToLive {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 25%;
+  height: 35%;
+  transform: translateX(-100%);
+  transition: 0.7s ease;
+}
+
+.rightToRepo {
+  top: 50%;
+  position: fixed;
+  right: 0;
+  width: 25%;
+  height: 35%;
+  transform: translateX(100%);
+  transition: 0.7s ease;
+}
+
+.active {
+  transform: translateX(0);
+}
