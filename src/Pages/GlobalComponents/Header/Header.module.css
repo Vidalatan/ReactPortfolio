@@ -15,12 +15,12 @@ header {
   justify-content: space-evenly;
   width: 100%;
   height: 100px;
-  transition: 0.7s ease;
+  transition: background-color 0.7s ease, transform .5s ease;
   z-index: 10;
 }
 
 header.up {
-  top: -50%;
+  transform: translateY(-100%);
 }
 
 .mainIcon {
