@@ -17,42 +17,48 @@ const Projects =
     "img": pokeshop,
     "darkImg": pokeshop,
     "repoURL": "https://github.com/Vidalatan/poke-shop",
-    'liveURL': 'https://vidalatan.github.io/poke-shop/index.html'
+    'liveURL': 'https://vidalatan.github.io/poke-shop/index.html',
+    'name': 'PokeShop'
   },
   "1": 
   {
     "img": dndyImgD,
     "darkImg": dndyImgL,
     "repoURL": "https://github.com/DNDYArt/DNDYArt",
-    'liveURL': 'https://dndyfineart.herokuapp.com/'
+    'liveURL': 'https://dndyfineart.herokuapp.com/',
+    'name': 'DNDY Fine Art'
   },
   "2": 
   {
     "img": nmn,
     "darkImg": nmn,
     "repoURL": "https://github.com/Nerds-Meet-Nerds/Nerds-Meet-Nerds",
-    'liveURL': 'https://nerds-meet-nerds.herokuapp.com/'
+    'liveURL': 'https://nerds-meet-nerds.herokuapp.com/',
+    'name': 'Nerds Meet Nerds'
   },
   "3": 
   {
     "img": opticCalcD,
     "darkImg": opticCalcL,
     "repoURL": "https://github.com/Vidalatan/Optic-Calculator",
-    'liveURL': null
+    'liveURL': null,
+    'name': 'Optical Calculator'
   },
   "4": 
   {
     "img": readmeD,
     "darkImg": readmeL,
     "repoURL": "https://github.com/Vidalatan/readme_maker",
-    'liveURL': null
+    'liveURL': null,
+    'name': 'Readme Maker'
   },
   "5": 
   {
     "img": weatherL,
     "darkImg": weatherD,
     "repoURL": "https://github.com/Vidalatan/weather_dashboard",
-    'liveURL': 'https://vidalatan.github.io/weather_dashboard/'
+    'liveURL': 'https://vidalatan.github.io/weather_dashboard/',
+    'name': 'Weather Dashboard'
   }
 }
 

@@ -8,7 +8,7 @@
   left: 0;
   width: 25%;
   height: 35%;
-  transform: translate(-100%, -50%);
+  transform: translate(-150%, -50%);
   transition: 0.7s ease;
   border-start-end-radius: 5px;
   border-end-end-radius: 20px;
@@ -38,7 +38,7 @@
   right: 0;
   width: 25%;
   height: 35%;
-  transform: translate(100%, -50%);
+  transform: translate(150%, -50%);
   transition: 0.7s ease;
   border-start-start-radius: 5px;
   border-end-start-radius: 20px;

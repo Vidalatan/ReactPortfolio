@@ -4,7 +4,7 @@ import classes from './RouteModals.module.css';
 
 import classify from '../../../utils/classify';
 
-export default function RouteModals({leftPane = null, rightPane = null, setModalsSettings}) {
+export default function RouteModals({leftPane = null, rightPane = null, name, setModalsSettings}) {
   const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY})
   const { currentStyle } = useContext(ThemeContext);
 
@@ -29,16 +29,16 @@ export default function RouteModals({leftPane = null, rightPane = null, setModal
     <>
     <div className={classify(classes.leftToLive, (leftPane != null && classes.active), currentStyle.secondarybg)} >
       <div>
-        <h3 className={classify(currentStyle.themeText)}>Visit the Live Site</h3>
+        <h3 className={classify(currentStyle.themeText)}>Visit {name} Live Site</h3>
         <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(leftPane, '_blank')}>Live Site</button>
       </div>
-      <button className={currentStyle.terbg} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('<', 5)}</button>
+      <button className={classify(currentStyle.terbg, currentStyle.hoverAltbg, currentStyle.hoverThemeText)} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('<', 5)}</button>
     </div>
 
     <div className={classify(classes.rightToRepo, (rightPane != null && classes.active), currentStyle.secondarybg)} >
-      <button className={currentStyle.terbg} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('>', 5)}</button>
+      <button className={classify(currentStyle.terbg, currentStyle.hoverAltbg, currentStyle.hoverThemeText)} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('>', 5)}</button>
       <div>
-        <h3 className={classify(currentStyle.themeText)}>Visit the Repository</h3>
+        <h3 className={classify(currentStyle.themeText)}>Visit {name} Repository</h3>
         <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(rightPane, '_blank')}>Repository</button>
       </div>
     </div>

@@ -10,13 +10,13 @@ export default function ProjectsCube() {
   const { currentStyle, currentTheme } = useContext(ThemeContext)
 
   const [isMounted, setIsMounted] = useState(false)
-  const [modalsSettings, setModalsSettings] = useState({active: false, leftUrl:null, rightUrl:null})
+  const [modalsSettings, setModalsSettings] = useState({active: false, leftUrl:null, rightUrl:null, name:null})
 
-  function toggleShowModals(left, right, cubeClick=true){
+  function toggleShowModals(left, right, name, cubeClick=true){
     if(modalsSettings.active) {
-      cubeClick ? setModalsSettings({active: true,leftUrl:left, rightUrl:right}) : setModalsSettings({active:false,leftUrl:null, rightUrl:null})
+      cubeClick ? setModalsSettings({active: true,leftUrl:left, rightUrl:right, name:name}) : setModalsSettings({active:false,leftUrl:null, rightUrl:null, name:null})
     } else {
-      setModalsSettings({active:true,leftUrl:left, rightUrl:right})
+      setModalsSettings({active:true,leftUrl:left, rightUrl:right, name:name})
     }
   }
 
@@ -391,38 +391,38 @@ export default function ProjectsCube() {
       <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[0].liveURL, projects[0].repoRUL)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[0].liveURL, projects[0].repoRUL, projects[0].name)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[1].liveURL, projects[1].repoURL)} style={{'width':'400px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[1].img : projects[1].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[1].liveURL, projects[1].repoURL, projects[1].name)} style={{'width':'400px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[1].img : projects[1].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[2].liveURL, projects[2].repoURL)} className={classes.unDrag} src={(currentTheme == 'light' ? projects[2].img : projects[2].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[2].liveURL, projects[2].repoURL, projects[2].name)} className={classes.unDrag} src={(currentTheme == 'light' ? projects[2].img : projects[2].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[3].liveURL, projects[3].repoURL)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[3].img : projects[3].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[3].liveURL, projects[3].repoURL, projects[3].name)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[3].img : projects[3].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[4].liveURL, projects[4].repoURL)} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[4].img : projects[4].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[4].liveURL, projects[4].repoURL, projects[4].name)} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[4].img : projects[4].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, classes.active)}>
-            <img onClick={() => toggleShowModals(projects[5].liveURL, projects[5].repoURL)} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[5].img : projects[5].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[5].liveURL, projects[5].repoURL, projects[5].name)} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[5].img : projects[5].darkImg)} />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <RouteModals leftPane={modalsSettings.leftUrl} rightPane={modalsSettings.rightUrl} setModalsSettings={setModalsSettings} />
+  <RouteModals leftPane={modalsSettings.leftUrl} rightPane={modalsSettings.rightUrl} name={modalsSettings.name} setModalsSettings={setModalsSettings} />
   </>
   )
 }

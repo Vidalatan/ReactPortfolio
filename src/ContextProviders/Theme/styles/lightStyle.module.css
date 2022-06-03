@@ -5,7 +5,7 @@
 .themeText {
   color: black;
 }
-.hoverThemeText:hover {
+.hoverThemeText:hover > span {
   color: black;
 }
 .themeAltText {
