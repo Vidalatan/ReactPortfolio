@@ -3,18 +3,20 @@ import classes from './RouteModals.module.css';
 
 import classify from '../../../utils/classify';
 
-export default function RouteModals(leftPane = {active:false, url:null}, rightPane = {active:false, url:null}) {
+export default function RouteModals({leftPane = null, rightPane = null}) {
+
+  console.log(leftPane, rightPane);
 
   return (
     <>
-    <div className={classify(classes.leftToLive, ((leftPane.active && leftPane.url != null) && classes.active))} >
+    <div className={classify(classes.leftToLive, (leftPane != null && classes.active))} >
       <h3>Visit the Live Site</h3>
-      <button onClick={() => window.open(leftPane.url, '_blank')}>Live Site</button>
+      <button onClick={() => window.open(leftPane, '_blank')}>Live Site</button>
     </div>
 
-    <div className={classify(classes.rightToRepo, (rightPane.active && classes.active))} >
+    <div className={classify(classes.rightToRepo, (rightPane != null && classes.active))} >
       <h3>Visit the Repository</h3>
-      <button onClick={() => window.open(rightPane.url, '_blank')}>Repository</button>
+      <button onClick={() => window.open(rightPane, '_blank')}>Repository</button>
     </div>
     </>
   )
