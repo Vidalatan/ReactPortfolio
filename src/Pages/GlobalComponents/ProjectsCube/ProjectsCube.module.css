@@ -4,12 +4,16 @@
   box-sizing: border-box; 
 }
 
-#wrapper {
-  padding-top: 10%; 
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
 }
 
 .viewport {
-  margin: 200px auto 300px auto;
+  width: 800px;
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
   -ms-perspective: 800px;
@@ -164,5 +168,10 @@ object:hover {
     -moz-transform: scale(.75, .75);
     -ms-transform: scale(.75, .75);
     -o-transform: scale(.75, .75);
-    transform: scale(.75, .75); } 
+    transform: scale(.75, .75); 
   }
+  
+  .wrapper {
+    height: 400px;
+  }
+}

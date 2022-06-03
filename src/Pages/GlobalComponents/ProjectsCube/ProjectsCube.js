@@ -373,7 +373,7 @@ export default function ProjectsCube() {
   }
 
   return (
-    <div id="wrapper">
+    <div className={classes.wrapper}>
     <div className={classes.viewport}>
       <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
