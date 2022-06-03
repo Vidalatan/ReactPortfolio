@@ -161,6 +161,12 @@ object:hover {
   opacity: 1; 
 }
 
+.cubeImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Does not prevent drag in Firefox */
 .unDrag {
   user-select: none;

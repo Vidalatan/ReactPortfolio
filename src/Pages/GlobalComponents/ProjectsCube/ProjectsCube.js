@@ -379,34 +379,32 @@ export default function ProjectsCube() {
       <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <a href={projects[0].repoURL}>
-              <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
-            </a>
+            <img onClick={() => window.open(projects[0].repoURL, '_blank')} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[1].img : projects[1].darkImg)} />
+            <img onClick={() => window.open(projects[1].repoURL, '_blank')} style={{'width':'400px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[1].img : projects[1].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[2].img : projects[2].darkImg)} />
+            <img onClick={() => window.open(projects[2].repoURL, '_blank')} className={classes.unDrag} src={(currentTheme == 'light' ? projects[2].img : projects[2].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[3].img : projects[3].darkImg)} />
+            <img onClick={() => window.open(projects[3].repoURL, '_blank')} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[3].img : projects[3].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[4].img : projects[4].darkImg)} />
+            <img onClick={() => window.open(projects[4].repoURL, '_blank')} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[4].img : projects[4].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, classes.active)}>
-            <img className={classes.unDrag} src={(currentTheme == 'light' ? projects[5].img : projects[5].darkImg)} />
+            <img onClick={() => window.open(projects[5].repoURL, '_blank')} style={{'width':'175px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[5].img : projects[5].darkImg)} />
           </div>
         </div>
       </div>

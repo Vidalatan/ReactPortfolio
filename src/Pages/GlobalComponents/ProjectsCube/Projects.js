@@ -15,31 +15,31 @@ const Projects =
   "0": 
   {
     "img": pokeshop,
-    "darkImg": null,
+    "darkImg": pokeshop,
     "repoURL": "https://github.com/Vidalatan/poke-shop"
   },
   "1": 
   {
-    "img": dndyImgL,
-    "darkImg": dndyImgD,
+    "img": dndyImgD,
+    "darkImg": dndyImgL,
     "repoURL": "https://github.com/DNDYArt/DNDYArt"
   },
   "2": 
   {
     "img": nmn,
-    "darkImg": null,
+    "darkImg": nmn,
     "repoURL": "https://github.com/Nerds-Meet-Nerds/Nerds-Meet-Nerds"
   },
   "3": 
   {
-    "img": opticCalcL,
-    "darkImg": opticCalcD,
+    "img": opticCalcD,
+    "darkImg": opticCalcL,
     "repoURL": "https://github.com/Vidalatan/Optic-Calculator"
   },
   "4": 
   {
-    "img": readmeL,
-    "darkImg": readmeD,
+    "img": readmeD,
+    "darkImg": readmeL,
     "repoURL": "https://github.com/Vidalatan/readme_maker"
   },
   "5": 
