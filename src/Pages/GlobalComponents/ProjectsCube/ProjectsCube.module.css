@@ -174,4 +174,8 @@ object:hover {
   .wrapper {
     height: 400px;
   }
+
+  .viewport {
+    width: 400px;
+  }
 }
