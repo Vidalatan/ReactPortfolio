@@ -9,14 +9,23 @@ export default function Header() {
   const {themeToggleIcon, mainIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
 
   const [menuActive, setMenuActive] = useState(false)
+  const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY})
 
   function toggleMenu(e) {
     setMenuActive(!menuActive)
   }
+
+  document.addEventListener('scroll', e => {
+    if (window.scrollY > scrollActivity.prevPos) {
+      setScrollActivity({scrolledDown: true, prevPos: window.scrollY})
+    } else if (window.scrollY < scrollActivity.prevPos) {
+      setScrollActivity({scrolledDown: false, prevPos: window.scrollY})
+    }
+  })
   
   return (
     <>
-    <header className={currentStyle.secondarybg}>
+    <header className={classify(currentStyle.secondarybg, (scrollActivity.scrolledDown && classes.up))}>
       <div className={classes.mainIcon}><img src={mainIcon} /></div>
 
       <h1 className={classify(classes.headerName,currentStyle.themeAltText)}>Vidal</h1>
