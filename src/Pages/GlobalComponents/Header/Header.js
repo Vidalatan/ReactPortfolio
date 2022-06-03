@@ -17,12 +17,14 @@ export default function Header() {
 
   document.addEventListener('scroll', e => {
     if (window.scrollY > scrollActivity.prevPos) {
+      setMenuActive(false)
       setScrollActivity({scrolledDown: true, prevPos: window.scrollY})
     } else if (window.scrollY < scrollActivity.prevPos) {
       setScrollActivity({scrolledDown: false, prevPos: window.scrollY})
     }
   })
   
+  console.log(classes.mainIcon);
   return (
     <>
     <header className={classify(currentStyle.secondarybg, (scrollActivity.scrolledDown && classes.up))}>
