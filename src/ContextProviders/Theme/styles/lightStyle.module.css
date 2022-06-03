@@ -5,15 +5,25 @@
 .themeText {
   color: black;
 }
+.hoverThemeText:hover {
+  color: black;
+}
 .themeAltText {
   color: #E39774;
 }
+.hoverAltText:hover {
+  color: #E39774;
+}
+
 
 .primarybg {
   background-color: #BEDFFE;
 }
 .primarybd {
   border-color: #BEDFFE;
+}
+.hoverPrimarybg:hover {
+  background-color: #BEDFFE;
 }
 
 
@@ -23,6 +33,9 @@
 .secondarybd {
   border-color: #325273;
 }
+.hoverSecondarybg:hover {
+  background-color: #325273;
+}
 
 
 .terbg {
@@ -30,6 +43,9 @@
 }
 .terbd {
   border-color: #0A0A0A;
+}
+.hoverTerbg:hover {
+  background-color: #0A0A0A;
 }
 
 
@@ -46,6 +62,9 @@
 }
 .altbd {
   border-color: #E39774;
+}
+.hoverAltbg:hover {
+  background-color: #E39774;
 }
 
 .cube > div {

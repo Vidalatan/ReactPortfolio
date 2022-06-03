@@ -1,22 +1,46 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import classes from './RouteModals.module.css';
 
 import classify from '../../../utils/classify';
 
-export default function RouteModals({leftPane = null, rightPane = null}) {
+export default function RouteModals({leftPane = null, rightPane = null, setModalsSettings}) {
+  const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY})
+  const { currentStyle } = useContext(ThemeContext);
 
-  console.log(leftPane, rightPane);
+  document.addEventListener('scroll', e => {
+    if (window.scrollY > scrollActivity.prevPos) {
+      setModalsSettings({active: false, leftUrl:null, rightUrl:null})
+      setScrollActivity({scrolledDown: true, prevPos: window.scrollY})
+    } else if (window.scrollY < scrollActivity.prevPos) {
+      setScrollActivity({scrolledDown: false, prevPos: window.scrollY})
+    }
+  })
+
+  function spanLooper(char, num) {
+    let _ = []
+    for(let i = 0; i <= num; i++) {
+      _.push((<span className={currentStyle.themeAltText}>{char}</span>))
+    }
+    return _
+  }
 
   return (
     <>
-    <div className={classify(classes.leftToLive, (leftPane != null && classes.active))} >
-      <h3>Visit the Live Site</h3>
-      <button onClick={() => window.open(leftPane, '_blank')}>Live Site</button>
+    <div className={classify(classes.leftToLive, (leftPane != null && classes.active), currentStyle.secondarybg)} >
+      <div>
+        <h3 className={classify(currentStyle.themeText)}>Visit the Live Site</h3>
+        <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(leftPane, '_blank')}>Live Site</button>
+      </div>
+      <button className={currentStyle.terbg} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('<', 5)}</button>
     </div>
 
-    <div className={classify(classes.rightToRepo, (rightPane != null && classes.active))} >
-      <h3>Visit the Repository</h3>
-      <button onClick={() => window.open(rightPane, '_blank')}>Repository</button>
+    <div className={classify(classes.rightToRepo, (rightPane != null && classes.active), currentStyle.secondarybg)} >
+      <button className={currentStyle.terbg} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('>', 5)}</button>
+      <div>
+        <h3 className={classify(currentStyle.themeText)}>Visit the Repository</h3>
+        <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(rightPane, '_blank')}>Repository</button>
+      </div>
     </div>
     </>
   )

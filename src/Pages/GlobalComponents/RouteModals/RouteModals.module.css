@@ -1,23 +1,72 @@
 .leftToLive {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 50%;
   left: 0;
   width: 25%;
   height: 35%;
-  transform: translateX(-100%);
+  transform: translate(-100%, -50%);
   transition: 0.7s ease;
+  border-start-end-radius: 5px;
+  border-end-end-radius: 20px;
+}
+
+.leftToLive > button {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 20px;
+  border: none;
+  border-start-end-radius: 5px;
+  border-end-end-radius: 20px;
+  cursor: pointer;
 }
 
 .rightToRepo {
-  top: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   position: fixed;
+  top: 50%;
   right: 0;
   width: 25%;
   height: 35%;
-  transform: translateX(100%);
+  transform: translate(100%, -50%);
   transition: 0.7s ease;
+  border-start-start-radius: 5px;
+  border-end-start-radius: 20px;
+}
+
+.rightToRepo > button {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 20px;
+  border: none;
+  border-start-start-radius: 5px;
+  border-end-start-radius: 20px;
+  cursor: pointer;
+}
+
+.sendButton {
+  cursor: pointer;
+  width: 150px;
+  height: 35px;
+  border-style: none;
+  border-radius: 5px;
+  margin-top: 25px;
 }
 
 .active {
-  transform: translateX(0);
+  transform: translate(0, -50%);
 }

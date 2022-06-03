@@ -13,7 +13,6 @@ export default function ProjectsCube() {
   const [modalsSettings, setModalsSettings] = useState({active: false, leftUrl:null, rightUrl:null})
 
   function toggleShowModals(left, right, cubeClick=true){
-    console.log("clicked");
     if(modalsSettings.active) {
       cubeClick ? setModalsSettings({active: true,leftUrl:left, rightUrl:right}) : setModalsSettings({active:false,leftUrl:null, rightUrl:null})
     } else {
@@ -423,7 +422,7 @@ export default function ProjectsCube() {
       </div>
     </div>
   </div>
-  <RouteModals leftPane={modalsSettings.leftUrl} rightPane={modalsSettings.rightUrl}/>
+  <RouteModals leftPane={modalsSettings.leftUrl} rightPane={modalsSettings.rightUrl} setModalsSettings={setModalsSettings} />
   </>
   )
 }
