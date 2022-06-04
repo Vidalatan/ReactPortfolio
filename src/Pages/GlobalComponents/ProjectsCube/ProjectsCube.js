@@ -6,13 +6,14 @@ import RouteModals from '../RouteModals/RouteModals';
 import projects from './Projects';
 import classes from './ProjectsCube.module.css';
 
-export default function ProjectsCube() {
+export default function ProjectsCube({touch}) {
   const { currentStyle, currentTheme } = useContext(ThemeContext)
 
   const [isMounted, setIsMounted] = useState(false)
   const [modalsSettings, setModalsSettings] = useState({active: false, leftUrl:null, rightUrl:null, name:null})
 
   function toggleShowModals(left, right, name, cubeClick=true){
+    (touch.isTouched || touch.setIsTouched(true))
     if(modalsSettings.active) {
       cubeClick ? setModalsSettings({active: true,leftUrl:left, rightUrl:right, name:name}) : setModalsSettings({active:false,leftUrl:null, rightUrl:null, name:null})
     } else {

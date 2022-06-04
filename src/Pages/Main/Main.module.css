@@ -39,6 +39,11 @@ main {
   flex-flow: row nowrap;
   justify-content: center;
   margin-top: 250px;
+  transition: 1s;
+}
+
+.projectsInst.hideInst {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
