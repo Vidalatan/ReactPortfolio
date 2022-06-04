@@ -4,7 +4,7 @@ import classes from './RouteModals.module.css';
 
 import classify from '../../../utils/classify';
 
-export default function RouteModals({leftPane = null, rightPane = null, name, setModalsSettings}) {
+export default function RouteModals({leftPane = null, rightPane = null, name=null, setModalsSettings}) {
   const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY})
   const { currentStyle } = useContext(ThemeContext);
 
@@ -27,6 +27,7 @@ export default function RouteModals({leftPane = null, rightPane = null, name, se
 
   return (
     <>
+    {(rightPane != null && <div onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})} className={classes.toggleOffDiv} ></div>)}
     <div className={classify(classes.leftToLive, (leftPane != null && classes.active), currentStyle.secondarybg)} >
       <div>
         <h3 className={classify(currentStyle.themeText)}>Visit {name} Live Site</h3>
