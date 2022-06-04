@@ -10,6 +10,7 @@
   height: 35%;
   transform: translate(-150%, -50%);
   transition: 0.7s ease;
+  padding-right: 20px;
   border-start-end-radius: 5px;
   border-end-end-radius: 20px;
 }
@@ -40,6 +41,7 @@
   height: 35%;
   transform: translate(150%, -50%);
   transition: 0.7s ease;
+  padding-left: 20px;
   border-start-start-radius: 5px;
   border-end-start-radius: 20px;
 }
@@ -56,6 +58,15 @@
   border-start-start-radius: 5px;
   border-end-start-radius: 20px;
   cursor: pointer;
+}
+
+.contentRest {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
 }
 
 .sendButton {
@@ -77,4 +88,22 @@
 
 .active {
   transform: translate(0, -50%);
+}
+
+@media (max-width: 768px) {
+  .leftToLive {
+    width: 35%;
+  }
+
+  .rightToRepo {
+    width: 35%;
+  }
+
+  .contentRest {
+    margin: 0 10px;
+  }
+
+  .sendButton {
+    width: 75px;
+  }
 }

@@ -29,7 +29,7 @@ export default function RouteModals({leftPane = null, rightPane = null, name=nul
     <>
     {(rightPane != null && <div onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})} className={classes.toggleOffDiv} ></div>)}
     <div className={classify(classes.leftToLive, (leftPane != null && classes.active), currentStyle.secondarybg)} >
-      <div>
+      <div className={classes.contentRest}>
         <h3 className={classify(currentStyle.themeText)}>Visit {name} Live Site</h3>
         <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(leftPane, '_blank')}>Live Site</button>
       </div>
@@ -38,7 +38,7 @@ export default function RouteModals({leftPane = null, rightPane = null, name=nul
 
     <div className={classify(classes.rightToRepo, (rightPane != null && classes.active), currentStyle.secondarybg)} >
       <button className={classify(currentStyle.terbg, currentStyle.hoverAltbg, currentStyle.hoverThemeText)} onClick={() => setModalsSettings({active: false, leftUrl:null, rightUrl:null})}>{spanLooper('>', 5)}</button>
-      <div>
+      <div className={classes.contentRest}>
         <h3 className={classify(currentStyle.themeText)}>Visit {name} Repository</h3>
         <button className={classify(classes.sendButton, currentStyle.altbg)} onClick={() => window.open(rightPane, '_blank')}>Repository</button>
       </div>

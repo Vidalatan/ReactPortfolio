@@ -391,7 +391,7 @@ export default function ProjectsCube() {
       <div className={classify(classes.cube, currentStyle.cube)}>
         <div className={classes.side}>
           <div className={classify(classes.cubeImage, currentStyle.cubeImage)}>
-            <img onClick={() => toggleShowModals(projects[0].liveURL, projects[0].repoRUL, projects[0].name)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
+            <img onClick={() => toggleShowModals(projects[0].liveURL, projects[0].repoURL, projects[0].name)} style={{'width':'150px'}} className={classes.unDrag} src={(currentTheme == 'light' ? projects[0].img : projects[0].darkImg)} />
           </div>
         </div>
         <div className={classes.side}>
