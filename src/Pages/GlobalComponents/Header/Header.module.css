@@ -83,6 +83,11 @@ nav {
   line-height: 0;
 }
 
+.navLink > a {
+  color: initial;
+  text-decoration: none;
+}
+
 .navLink:hover {
   font-size: 1.75rem;
 }

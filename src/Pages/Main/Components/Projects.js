@@ -10,6 +10,7 @@ export default function Projects() {
 
   return (
     <>
+    <div id='projectsJump' className={classes.jumpPoint}/>
     <div className={classify(classes.projectsInst, (isTouched && classes.hideInst))}><h2>Drag cube and click a project to explore!</h2></div>
     <ProjectsCube touch={{isTouched:isTouched, setIsTouched:setIsTouched}} />
     </>
