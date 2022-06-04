@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ProjectsCube from '../../GlobalComponents/ProjectsCube/ProjectsCube';
+import classes from '../Main.module.css';
 
 
 export default function Projects() {
-  const projectDisplay = useRef();
 
   return (
     <>
-    <div ref={projectDisplay}>Projects displayed here...</div>
+    <div className={classes.projectsInst}><h2>Drag cube and click a project to explore!</h2></div>
     <ProjectsCube />
     </>
   )

@@ -74,6 +74,7 @@ nav {
 
 .navLink {
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   margin: 0 20px;
   font-size: 1.25rem;
@@ -105,16 +106,13 @@ nav {
   height: 45px;
 }
 
-@media (max-width: 768px) {
-  .headerIcon {
-    margin-left: 25px;
-  }
-  
+@media (max-width: 1180px) {
   .navLinksContainer {
     position: fixed;
     flex-flow: column nowrap;
     top: 100px;
     right: -100%;
+    width: 50%;
   }
 
   .navLinksMenu {
@@ -136,7 +134,21 @@ nav {
   }
   .navLinksMenu.active .menuBar:nth-child(3){
     transform: translateY(-15px) rotate(-405deg);
-    
+  }
+
+  .navLink {
+    margin: 10px 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .headerIcon {
+    margin-left: 25px;
+  }
+
+  .navLinksContainer {
+    width: 80%;
   }
 
   .navLink {
