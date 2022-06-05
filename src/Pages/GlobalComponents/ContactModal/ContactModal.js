@@ -9,7 +9,7 @@ export default function ContactModal({active, toggle}) {
 
   return (
     <>
-    {(active && <div onClick={toggle} className={classes.toggleOff} />)}
+    {(active && <div onClick={toggle} className={classify(classes.toggleOff, (active && classes.active))} />)}
     <div className={classify(classes.modalWrapper, currentStyle.altbg, currentStyle.themeText, (active && classes.active))}>
       <h3>Vidal Tan</h3>
       <h4>Contact Information</h4>

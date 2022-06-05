@@ -30,6 +30,7 @@ export default function Header() {
   return (
     <>
     <ContactModal active={contactModal} toggle={() => setContactModal(false)} />
+    {/* {(contactModal && <ContactModal active={contactModal} toggle={() => setContactModal(false)} />)} */}
     <header className={classify(currentStyle.secondarybg, (scrollActivity.scrolledDown && classes.up))}>
       <div className={classes.mainIcon}><a className={classes.mainIcon} onClick={() => router.setLocation('/#top')} href='#top'><img src={mainIcon} /></a></div>
 
