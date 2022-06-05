@@ -1,5 +1,6 @@
 import React, {useContext, useState} from 'react';
 import AniCube from '../AniCube/AniCube';
+import ContactModal from '../ContactModal/ContactModal';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
 import { RouterContext } from '../../../ContextProviders/Router/RouterContext';
 import classes from './Header.module.css';
@@ -10,8 +11,9 @@ export default function Header() {
   const {themeToggleIcon, mainIcon, toggleCurrentTheme, currentStyle} = useContext(ThemeContext);
   const router = useContext(RouterContext);
 
-  const [menuActive, setMenuActive] = useState(false)
-  const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY})
+  const [menuActive, setMenuActive] = useState(false);
+  const [contactModal, setContactModal] =useState(false);
+  const [scrollActivity, setScrollActivity] = useState({scrolledDown: false, prevPos: window.scrollY});
 
   function toggleMenu(e) {
     setMenuActive(!menuActive)
@@ -27,6 +29,7 @@ export default function Header() {
   })
   return (
     <>
+    {(contactModal && <ContactModal />)}
     <header className={classify(currentStyle.secondarybg, (scrollActivity.scrolledDown && classes.up))}>
       <div className={classes.mainIcon}><a className={classes.mainIcon} onClick={() => router.setLocation('/#top')} href='#top'><img src={mainIcon} /></a></div>
 
@@ -40,11 +43,11 @@ export default function Header() {
           </li>
           <li className={classes.navLink}> 
             <AniCube optionalStyle={classes.cubeAdjuster}/>
-            <a onClick={() => router.setLocation('/about')}>About Me</a>
+            <a onClick={() => router.setLocation('/about#top')}>About Me</a>
           </li>
           <li className={classes.navLink}> 
             <AniCube optionalStyle={classes.cubeAdjuster}/>
-            <a>GET IN TOUCH</a>
+            <a onClick={() => setContactModal(!contactModal)}>GET IN TOUCH</a>
           </li>
         </ul>
 
