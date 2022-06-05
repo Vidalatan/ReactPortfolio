@@ -29,7 +29,7 @@ export default function Header() {
   })
   return (
     <>
-    {(contactModal && <ContactModal />)}
+    <ContactModal active={contactModal} toggle={() => setContactModal(false)} />
     <header className={classify(currentStyle.secondarybg, (scrollActivity.scrolledDown && classes.up))}>
       <div className={classes.mainIcon}><a className={classes.mainIcon} onClick={() => router.setLocation('/#top')} href='#top'><img src={mainIcon} /></a></div>
 
@@ -39,15 +39,15 @@ export default function Header() {
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText, currentStyle.secondarybg, (menuActive ? classes.active : ''))}>
           <li className={classes.navLink}>
             <AniCube optionalStyle={classes.cubeAdjuster}/>
-            <a onClick={() => router.setLocation('/#projectsJump')} href='/#projectsJump'>Projects</a>
+            <a onClick={() => {router.setLocation('/#projectsJump'); toggleMenu()}} href='/#projectsJump'>Projects</a>
           </li>
           <li className={classes.navLink}> 
             <AniCube optionalStyle={classes.cubeAdjuster}/>
-            <a onClick={() => router.setLocation('/about#top')}>About Me</a>
+            <a onClick={() => {router.setLocation('/about#top'); toggleMenu()}}>About Me</a>
           </li>
           <li className={classes.navLink}> 
             <AniCube optionalStyle={classes.cubeAdjuster}/>
-            <a onClick={() => setContactModal(!contactModal)}>GET IN TOUCH</a>
+            <a onClick={() => {setContactModal(!contactModal); toggleMenu()}}>GET IN TOUCH</a>
           </li>
         </ul>
 
