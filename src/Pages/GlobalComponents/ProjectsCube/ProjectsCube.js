@@ -384,7 +384,6 @@ export default function ProjectsCube({touch}) {
     }); 
   }
 
-  console.log(modalsSettings);
   return (
     <>
     <div className={classes.wrapper}>
