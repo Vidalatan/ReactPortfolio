@@ -1,0 +1,9 @@
+.paras {
+  padding: 4rem 10rem;
+  font-size: 2rem;
+}
+
+.paras > p {
+  margin-bottom: 2.25rem;
+  line-height: 3.25rem;
+}
