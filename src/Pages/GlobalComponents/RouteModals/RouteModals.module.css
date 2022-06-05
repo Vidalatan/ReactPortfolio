@@ -28,7 +28,6 @@
   border-end-end-radius: 20px;
   cursor: pointer;
 }
-
 .rightToRepo {
   display: flex;
   flex-flow: row nowrap;

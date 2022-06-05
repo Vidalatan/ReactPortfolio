@@ -34,9 +34,18 @@ export default function Header() {
       <nav>
 
         <ul className={classify(classes.navLinksContainer,currentStyle.themeText, currentStyle.secondarybg, (menuActive ? classes.active : ''))}>
-          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/><a onClick={() => router.setLocation('/#projectsJump')} href='/#projectsJump'>Projects</a></li>
-          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/><a onClick={() => router.setLocation('/about')}>About Me</a></li>
-          <li className={classes.navLink}> <AniCube optionalStyle={classes.cubeAdjuster}/>GET IN TOUCH</li>
+          <li className={classes.navLink}>
+            <AniCube optionalStyle={classes.cubeAdjuster}/>
+            <a onClick={() => router.setLocation('/#projectsJump')} href='/#projectsJump'>Projects</a>
+          </li>
+          <li className={classes.navLink}> 
+            <AniCube optionalStyle={classes.cubeAdjuster}/>
+            <a onClick={() => router.setLocation('/about')}>About Me</a>
+          </li>
+          <li className={classes.navLink}> 
+            <AniCube optionalStyle={classes.cubeAdjuster}/>
+            <a>GET IN TOUCH</a>
+          </li>
         </ul>
 
         <div className={classify(classes.navLinksMenu, (menuActive ? classes.active : ''))} onClick={toggleMenu}>

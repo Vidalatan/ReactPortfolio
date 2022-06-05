@@ -12,6 +12,7 @@ export default function Main() {
   return (
     <main className={classify(currentStyle.primarybg, currentStyle.themeText)}>
       <Intro />
+      <div className={classes.pageBreak} />
       <Projects />
     </main>
   )

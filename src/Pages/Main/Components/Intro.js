@@ -1,11 +1,13 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { ThemeContext } from '../../../ContextProviders/Theme/ThemeContext';
+import { RouterContext } from '../../../ContextProviders/Router/RouterContext';
 import classify from '../../../utils/classify';
 
 import classes from '../Main.module.css';
 
 export default function Intro() {
   const { currentStyle } = useContext(ThemeContext);
+  const router = useContext(RouterContext)
 
   // Timing Settings (for convenience)
     const highlightInterval = 50;
@@ -91,13 +93,27 @@ export default function Intro() {
       <p>I am a full-stack web developer focusing on UI/UX design.</p>
       
       <p>
-        I recently graduated from a rigorous bootcamp hosted by SMU where I 
-        learned how to make fun and appealing applications. I have been invested 
-        in technology, more specifically programming, for many years and have decided 
-        it's time to finally step up my game.
+        Some call me a programming wizard, digital illustrator, technology nerd... but it's because I have been genuinely invested 
+        in technology, more specifically programming, for many years and have recently decided to present
+        my skills to the world!
+      </p>
+
+      <p>
+        Outside of technology, I am a United States Airforce Veteran, music enthusiast, and father of two girls...
       </p>
       
-      <button className={classify(classes.moreButton,classes.button57, currentStyle.altbg, currentStyle.themeText)}>More about me...</button>
+      <button 
+      onClick={() => { router.setLocation('/about') }} 
+      className={classify(
+        classes.moreButton,
+        classes.button57, 
+        currentStyle.altbg, 
+        currentStyle.hoverSecondarybg,
+        currentStyle.themeText,
+        currentStyle.hoverAltText)}>
+        
+        More about me...
+      </button>
     </div>
 
     </>

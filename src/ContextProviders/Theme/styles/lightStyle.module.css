@@ -5,8 +5,11 @@
 .themeText {
   color: black;
 }
+.hoverThemeText:hover {
+  color: white;
+}
 .hoverThemeText:hover > span {
-  color: black;
+  color: white;
 }
 .themeAltText {
   color: #E39774;
@@ -71,7 +74,7 @@
   background-color: #325273;
   background-position: center;
   border: 2px solid #A0DBF8;
-  transition: 0.7s;
+  transition: 0.7s ease;
 }
 
 .cube > div > div.cubeImage {

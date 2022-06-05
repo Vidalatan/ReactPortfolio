@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.pageBreak {
+  width: 100%;
+  border: 2px solid black;
+}
+
 .jumpPoint {
   height: 25px;
 }
@@ -25,13 +30,20 @@ main {
   font-size: 1.75rem;
 }
 
+.introStack > p {
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
 .moreButton {
-  width: 150px;
-  height: 35px;
+  cursor: pointer;
+  width: 250px;
+  height: 70px;
   border-style: none;
   border-radius: 5px;
   align-self: flex-end;
   margin: 75px;
+  font-size: 1.75rem;
 }
 
 .typerH {
@@ -62,6 +74,12 @@ main {
 
   .introStack {
     padding: 25px;
+    font-size: 1rem;
+  }
+
+  .moreButton {
+    width: 150px;
+    height: 35px;
     font-size: 1rem;
   }
 
