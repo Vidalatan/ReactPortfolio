@@ -165,6 +165,9 @@ object:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 400px;
 }
 
 /* Does not prevent drag in Firefox */
