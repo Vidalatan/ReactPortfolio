@@ -14,6 +14,11 @@ import classes from './App.module.css';
 function App() {
   const { currentStyle } = useContext(ThemeContext)
   const router = useContext(RouterContext)
+
+  window.onpopstate = function(e) {
+    (router.location != window.location.pathname && router.setLocation(window.location.pathname))
+  }
+
   return (
     <div className={classify(classes.setBackdrop, currentStyle.primarybg)}>
       <Header />
