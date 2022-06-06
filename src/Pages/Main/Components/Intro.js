@@ -90,7 +90,7 @@ export default function Intro() {
     <h2 className={classes.typerGreeting}>{currentGreetMsg}</h2>
 
     <div className={classes.introStack}>
-      <p>I am a full-stack web developer focusing on UI/UX design.</p>
+      <p>I am a bi-lingual full-stack web developer focusing on UI/UX design.</p>
       
       <p>
         Some call me a programming wizard, digital illustrator, technology nerd... but it's because I have been genuinely invested 

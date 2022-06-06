@@ -15,7 +15,7 @@ export default function About() {
       </p>
 
       <p className={currentStyle.themeText}>
-        I'm a versitile developer with an extensive history in programming and graphic design. My dedication to continuouly learning about new web design trends and concepts has made me a valuable member of any team. I served in the United States Airforce as an Airborn Cryptologic Linguist where I studied Mandarin Chinese to the same fluency as a native speaker. I am a dedicated to my work and passions and will never give up on creating my own sucess. I have several years of management experience where I have learned and developed the skill needed to be efficient and effective at leading a team. 
+        I'm a versatile developer with an extensive history in programming and graphic design. My dedication to continuously learning about new web design trends and concepts has made me a valuable member of any team. I served in the United States Airforce as an Airborne Cryptologic Linguist where I studied Mandarin Chinese to the same fluency as a native speaker. I am dedicated to my work and passions and will never give up on creating my own success. I have several years of management experience where I have learned and developed the skill needed to be efficient and effective at leading a team.
       </p>
     </div>
     </>
