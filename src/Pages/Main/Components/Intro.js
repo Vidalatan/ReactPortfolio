@@ -93,9 +93,7 @@ export default function Intro() {
       <p>I am a bi-lingual full-stack web developer focusing on UI/UX design.</p>
       
       <p>
-        Some call me a programming wizard, digital illustrator, technology nerd... but it's because I have been genuinely invested 
-        in technology, more specifically programming, for many years and have recently decided to present
-        my skills to the world!
+        Some call me a programming wizard, digital illustrator, technology nerd... but it's because I have been genuinely invested in technology, more specifically programming, for many years and had decided to present my skills to the world!
       </p>
 
       <p>
