@@ -15,8 +15,8 @@ export default function ContactModal({active, toggle}) {
       <h4>Contact Information</h4>
       <ul>
         <li className={classify(currentStyle.primarybg, currentStyle.hoverSecondarybg, currentStyle.themeText, currentStyle.hoverThemeText)}><a href='mailto:vidalatan@gmail.com'>Vidalatan@gmail.com</a></li>
-        <li onClick={() => { window.open('https://github.com/Vidalatan', '_blank') }} className={classify(currentStyle.primarybg, currentStyle.hoverSecondarybg, currentStyle.themeText, currentStyle.hoverThemeText)}><a href='https://github.com/Vidalatan' target='_blank'>Git Hub</a></li>
-        <li onClick={() => { window.open('https://www.linkedin.com/in/vidal-tan-2848741b0/', '_blank') }} className={classify(currentStyle.primarybg, currentStyle.hoverSecondarybg, currentStyle.themeText, currentStyle.hoverThemeText)}><a href='https://www.linkedin.com/in/vidal-tan-2848741b0/' target='_blank'>LinkedIn</a></li>
+        <li onClick={() => { window.open('https://github.com/Vidalatan') }} className={classify(currentStyle.primarybg, currentStyle.hoverSecondarybg, currentStyle.themeText, currentStyle.hoverThemeText)}><a href='https://github.com/Vidalatan'>Git Hub</a></li>
+        <li onClick={() => { window.open('https://www.linkedin.com/in/vidal-tan-2848741b0/') }} className={classify(currentStyle.primarybg, currentStyle.hoverSecondarybg, currentStyle.themeText, currentStyle.hoverThemeText)}><a href='https://www.linkedin.com/in/vidal-tan-2848741b0/'>LinkedIn</a></li>
       </ul>
     </div>
     </>
