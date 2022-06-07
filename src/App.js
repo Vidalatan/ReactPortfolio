@@ -15,6 +15,7 @@ function App() {
   const { currentStyle } = useContext(ThemeContext)
   const router = useContext(RouterContext)
 
+  // When active history entry changes, change router context to render appropriately
   window.onpopstate = function(e) {
     (router.location != window.location.pathname && router.setLocation(window.location.pathname))
   }
