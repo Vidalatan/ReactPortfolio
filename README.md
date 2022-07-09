@@ -21,9 +21,9 @@ I decided to go the route of creating this portfolio, and will continue to do so
 
 ## [Finished Product](#finished_product)
 
-Link to live [Vidal Tan Portfolio](https://ReactPortfolio.github.io/vidalatan)
+Link to live [Vidal Tan Portfolio](https://vidal-portfolio.herokuapp.com/)
 
-Link to [Code Repository](https://github.com/{git-username}/{project-name})
+Link to [Code Repository](https://github.com/Vidalatan/ReactPortfolio)
 
 ---
 
